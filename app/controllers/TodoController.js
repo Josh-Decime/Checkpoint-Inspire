@@ -15,11 +15,13 @@ function _drawTodosForm() {
 }
 
 // NOTE make template & then return
-// function _drawTodosList(){
-//     const todos = AppState.todos
-//     let content = ''
-//     todos.forEach(todo => content += todo.)
-// }
+function _drawTodosList() {
+    console.log('✒️☑️')
+    const todos = AppState.todos
+    let content = ''
+    todos.forEach(todo => content += todo.TodoCard)
+    setHTML('your-todo-list', content)
+}
 
 
 export class TodoController {
@@ -27,6 +29,8 @@ export class TodoController {
         console.log('☑️🎮 Todo controller ready!')
         AppState.on('account', this.getTodos)
         AppState.on('user', _drawTodosForm)
+        AppState.on('user', _drawTodosList)
+        AppState.on('todos', _drawTodosList)
     }
 
 

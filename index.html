@@ -12,10 +12,14 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
+  <script id="debug-script" src="https://cdn.jsdelivr.net/gh/MickShannahan/style-debug@latest/debug.min.js"
+    defer></script>
   <title>Checkpoint-Inspire</title>
 </head>
 
-<body>
+<!-- ANCHOR debug goes here for style debugger -->
+
+<body class="">
   <!-- SECTION -->
   <header>
     <nav class="navbar navbar-dark navbar-expand bg-dark text-light px-2">
@@ -45,20 +49,22 @@
       <!-- primary viewport -->
     </section>
 
-    <section class="constainer-fluid">
+    <section class="container-fluid">
       <section class="row">
         <div class="col-4">
           <!-- NOTE don't forget on submit! -->
           <!-- NOTE once we have the form set up, d-none to make it invisible & check if user is logged in to make visible -->
-          <form onsubmit="app.TodoController.createTodo()" id="your-todo-form" class="d-none">
-            <div>
-              <label for="Add-Todo">Add a Todo</label>
-              <input required type="text" id="add-todo" name="description" class="form-control">
-              <button type="submit" class="form-control" title="Create your Todo"><i
+          <form onsubmit="app.TodoController.createTodo()" id="your-todo-form" class="d-none mt-3">
+            <div class="input-group">
+              <input required type="text" id="add-todo" name="description" class="form-control" minlength="3"
+                maxlength="30" placeholder="Create a new Todo">
+              <button type="submit" class="input-group-text bg-success" title="Create your Todo"><i
                   class="mdi mdi-checkbox-marked-circle-plus-outline"></i></button>
             </div>
           </form>
-          <div id="your-todo"></div>
+          <section class="">
+            <div id="your-todo-list"></div>
+          </section>
         </div>
       </section>
     </section>
@@ -88,3 +94,11 @@
 </body>
 
 </html>
+
+
+<div class="">
+  <div class="card mt-1 d-flex justify-content-between">
+    <input type="checkbox" class="">
+    <p class="text-center">${this.description}</p>
+  </div>
+</div>

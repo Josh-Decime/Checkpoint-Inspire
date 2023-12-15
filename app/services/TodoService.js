@@ -16,6 +16,9 @@ class TodoService {
     async getTodos() {
         const axiosResponse = await api.get('api/todos')
         console.log('☑️📡 Response from todo API:', axiosResponse)
+        const newTodos = axiosResponse.data.map(todoData => new Todo(todoData))
+        console.log('🥪✨🗺️ mapping API data', newTodos)
+        AppState.todos = newTodos
 
 
 

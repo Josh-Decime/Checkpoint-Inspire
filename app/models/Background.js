@@ -12,6 +12,13 @@ export class Background {
     }
 
 
+    get AuthorTemplate() {
+        return `
+        <p>Image by:</p>
+        <p>${this.author}</p>
+        `
+    }
+
 
 
 

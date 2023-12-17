@@ -10,6 +10,7 @@ class BackgroundService {
         const response = await api.get('https://sandbox.codeworksacademy.com/api/images')
         console.log('🎄 getting background image:', response.data)
         const newBackground = new Background(response.data)
+        // @ts-ignore
         AppState.background = newBackground
         console.log('✨🎄', AppState.background)
     }

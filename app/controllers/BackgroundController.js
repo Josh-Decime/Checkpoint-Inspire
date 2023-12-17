@@ -5,10 +5,23 @@ import { Pop } from "../utils/Pop.js";
 import { setHTML } from "../utils/Writer.js";
 
 
+function _drawBackgroundimage() {
+    const background = AppState.background
+    // NOTE it didn't recognize AuthorTemplate, Im moving on for more requirements revisit if theres time
+    // let content = background.AuthorTemplate
+    // setHTML('image-author', content)
+    // @ts-ignore
+    document.body.style.backgroundImage = `url(${background.largeImgUrl})`
+    document.body.style.backgroundSize = "Cover"
+}
+
+
+
 
 export class BackgroundController {
     constructor() {
         console.log('🎄🎮')
+        AppState.on('background', _drawBackgroundimage)
         this.getBackground()
     }
 

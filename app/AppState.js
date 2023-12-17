@@ -1,3 +1,4 @@
+import { Background } from './models/Background.js'
 import { Todo } from './models/Todo.js'
 import { EventEmitter } from './utils/EventEmitter.js'
 import { createObservableProxy } from './utils/ObservableProxy.js'
@@ -23,12 +24,13 @@ class ObservableAppState extends EventEmitter {
         completed: false,
         description: "be able to check this box to complete it!"
       }
-    )
-
-
-
-
+    ),
   ]
+
+  /**
+   * @type {Background[]}
+   */
+  background = []
 
 
 

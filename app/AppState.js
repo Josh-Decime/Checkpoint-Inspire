@@ -1,7 +1,9 @@
 import { Background } from './models/Background.js'
+import { Quote } from './models/Quote.js'
 import { Todo } from './models/Todo.js'
 import { EventEmitter } from './utils/EventEmitter.js'
 import { createObservableProxy } from './utils/ObservableProxy.js'
+
 
 
 class ObservableAppState extends EventEmitter {
@@ -31,6 +33,14 @@ class ObservableAppState extends EventEmitter {
    * @type {Background[]}
    */
   background = []
+
+  /**
+   * @type {Quote}
+   */
+  quote = new Quote({
+    "content": "Quote will be displayed shortly",
+    "author": "Site Creator"
+  })
 
 
 

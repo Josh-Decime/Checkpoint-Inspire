@@ -5,7 +5,7 @@ import { Pop } from "../utils/Pop.js";
 import { setHTML } from "../utils/Writer.js";
 
 
-function _drawBackgroundimage() {
+function _drawBackgroundImage() {
     const background = AppState.background
     // NOTE it didn't recognize AuthorTemplate, Im moving on for more requirements revisit if theres time
     // let content = background.AuthorTemplate
@@ -20,8 +20,8 @@ function _drawBackgroundimage() {
 
 export class BackgroundController {
     constructor() {
-        console.log('🎄🎮')
-        AppState.on('background', _drawBackgroundimage)
+        console.log('🎄🎮 background images incoming!')
+        AppState.on('background', _drawBackgroundImage)
         this.getBackground()
     }
 

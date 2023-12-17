@@ -12,9 +12,9 @@ export class Quote {
 
     get QuoteTemplate() {
         return `
-<div>
-  <h2 class="hover-parent">${this.content}</h2>
-  <p class="hover-child">${this.author}</p>
+<div class="hover-parent">
+  <h2 class="readable">${this.content}</h2>
+  <p class="hover-child  readable">- ${this.author}</p>
 </div>
         `
     }

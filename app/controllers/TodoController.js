@@ -24,7 +24,10 @@ function _drawTodosList() {
 }
 
 function _drawTodoCount() {
-    setHTML('todo-count', this.todoCount.count.toString())
+    let countElm = document.getElementById('todo-count')
+    countElm.innerHTML = todoService.todoCount.toString()
+    console.log('count value inside draw function', this.todoCount.count)
+    // setHTML('todo-count', this.todoCount.count.toString())
 }
 
 
@@ -83,16 +86,29 @@ export class TodoController {
         }
     }
 
+
     todoCount() {
         try {
-            todoService.todoCount()
             let count = 0
+
+            // todoService.todoCount()
             count = todoService.todoCount()
+            console.log('this is the count number in the controller', count)
         } catch (error) {
             console.error(error)
             Pop.error(error)
         }
     }
+
+
+    // _drawTodoCount() {
+    //     // let countElm = document.getElementById('todo-count')
+    //     // countElm.innerHTML = todoService.todoCount.toString()
+    //     // console.log('count value inside draw function', this.todoCount.count)
+    //     setHTML('todo-count', this.todoCount.toString())
+    // }
+
+
 
 
     // try {

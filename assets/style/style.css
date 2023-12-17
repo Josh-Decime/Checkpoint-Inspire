@@ -1,1 +1,23 @@
 /* BASIC STYLES HERE */
+
+
+.hover-parent .hover-child {
+    opacity: 0;
+    transition: opacity 1s linear;
+}
+
+.hover-parent:hover .hover-child {
+    opacity: 1;
+    transition: opacity .5s linear;
+}
+
+.readable {
+    background-color: rgba(0, 0, 0, 0.20);
+    border-radius: 25px;
+    color: antiquewhite;
+    text-shadow: 2px 2px 4px #000000;
+    backdrop-filter: blur(25px);
+    padding: 10px;
+    padding-left: 20px;
+
+}

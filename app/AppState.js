@@ -29,6 +29,8 @@ class ObservableAppState extends EventEmitter {
     ),
   ]
 
+  todoCount = 0
+
   /**
    * @type {Background[]}
    */

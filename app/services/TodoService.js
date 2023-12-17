@@ -37,6 +37,12 @@ class TodoService {
         AppState.todos.splice(indexToRemove, 1)
     }
 
+    todoCount() {
+        let count = 0
+        count = AppState.todos.length
+        console.log('todo count', count)
+        return count
+    }
 
 
 

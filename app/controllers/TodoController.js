@@ -23,6 +23,10 @@ function _drawTodosList() {
     setHTML('your-todo-list', content)
 }
 
+function _drawTodoCount() {
+    setHTML('todo-count', this.todoCount.count.toString())
+}
+
 
 export class TodoController {
     constructor() {
@@ -31,6 +35,8 @@ export class TodoController {
         AppState.on('user', _drawTodosForm)
         AppState.on('user', _drawTodosList)
         AppState.on('todos', _drawTodosList)
+        AppState.on('todos', this.todoCount)
+        AppState.on('todos', _drawTodoCount)
     }
 
 
@@ -52,6 +58,7 @@ export class TodoController {
             const formData = getFormData(form)
             console.log('☑️💾 form data', formData)
             await todoService.createTodo(formData)
+            // @ts-ignore
             form.reset()
         } catch (error) {
             console.error(error)
@@ -73,6 +80,17 @@ export class TodoController {
         if (isConfirmed) {
             console.log('🔥Deleting 🔥', todoId)
             todoService.removeTodo(todoId)
+        }
+    }
+
+    todoCount() {
+        try {
+            todoService.todoCount()
+            let count = 0
+            count = todoService.todoCount()
+        } catch (error) {
+            console.error(error)
+            Pop.error(error)
         }
     }
 

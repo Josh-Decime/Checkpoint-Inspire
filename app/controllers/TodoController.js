@@ -25,7 +25,7 @@ function _drawTodosList() {
 
 function _drawTodoCount() {
     let countElm = document.getElementById('todo-count')
-    countElm.innerHTML = todoService.todoCount.toString()
+    countElm.innerHTML = AppState.todoCount.toString()
     console.log('count value inside draw function', this.todoCount.count)
     // setHTML('todo-count', this.todoCount.count.toString())
 }
@@ -39,7 +39,7 @@ export class TodoController {
         AppState.on('user', _drawTodosList)
         AppState.on('todos', _drawTodosList)
         AppState.on('todos', this.todoCount)
-        AppState.on('todos', _drawTodoCount)
+        AppState.on('todoCount', _drawTodoCount)
     }
 
 
@@ -89,16 +89,29 @@ export class TodoController {
 
     todoCount() {
         try {
-            let count = 0
 
-            // todoService.todoCount()
-            count = todoService.todoCount()
-            console.log('this is the count number in the controller', count)
+            todoService.todoCount()
+            console.log('controller telling service to update todo count')
         } catch (error) {
             console.error(error)
             Pop.error(error)
         }
     }
+
+
+
+    // todoCount() {
+    //     try {
+    //         let count = 0
+
+    //         // todoService.todoCount()
+    //         count = todoService.todoCount()
+    //         console.log('this is the count number in the controller', count)
+    //     } catch (error) {
+    //         console.error(error)
+    //         Pop.error(error)
+    //     }
+    // }
 
 
     // _drawTodoCount() {

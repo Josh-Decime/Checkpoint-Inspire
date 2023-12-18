@@ -41,7 +41,8 @@ class TodoService {
         let count = 0
         count = AppState.todos.length
         console.log('todo count in the service', count)
-        return count
+        AppState.todoCount = count
+        console.log('count in the AppState', AppState.todoCount)
     }
 
 

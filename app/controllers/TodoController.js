@@ -25,7 +25,10 @@ function _drawTodosList() {
 
 function _drawTodoCount() {
     let countElm = document.getElementById('todo-count')
-    countElm.innerHTML = AppState.todoCount.toString()
+
+    // FIXME filter your todo array here to only include todos that are not complete
+    // FIXME inject your filtered array's length into your HTML
+    countElm.innerHTML = AppState.todos.length.toString()
     console.log('count value inside draw function', this.todoCount.count)
     // setHTML('todo-count', this.todoCount.count.toString())
 }

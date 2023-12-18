@@ -54,11 +54,10 @@
 
     <section class="container-fluid">
       <section class="row">
-        <div class="bg-danger text-light"><span id="todo-count">0</span></div>
         <div class="col-4">
-          <!-- NOTE don't forget on submit! -->
-          <!-- NOTE once we have the form set up, d-none to make it invisible & check if user is logged in to make visible -->
-          <form onsubmit="app.TodoController.createTodo()" id="your-todo-form" class="d-none mt-3">
+          <p class="mt-3 mb-0 text-center todoCountStyle">You have created <span id="todo-count">0</span> Todos</p>
+
+          <form onsubmit="app.TodoController.createTodo()" id="your-todo-form" class="d-none mt-0">
             <div class="input-group">
               <input required type="text" id="add-todo" name="description" class="form-control" minlength="3"
                 maxlength="30" placeholder="Create a new Todo">
@@ -70,14 +69,17 @@
             <div id="your-todo-list"></div>
           </section>
         </div>
+
+        <div class="col-6" id="quote-displayed"></div>
+
+        <section id="display-time" class="timeStyle">
+          <h1>TIME!</h1>
+        </section>
+
       </section>
     </section>
 
-    <section class="container-fluid">
-      <section class="row">
-        <div class="col-6" id="quote-displayed"></div>
-      </section>
-    </section>
+
 
   </main>
 

@@ -19,5 +19,20 @@
     backdrop-filter: blur(25px);
     padding: 10px;
     padding-left: 20px;
+}
 
+.todoCountStyle {
+    background-color: rgba(0, 0, 0, 0.20);
+    border-radius: 25px;
+    color: antiquewhite;
+    text-shadow: 2px 2px 4px #000000;
+    backdrop-filter: blur(25px);
+    padding: 1px;
+}
+
+.timeStyle {
+    color: antiquewhite;
+    text-shadow: 2px 2px 4px #000000;
+    font-size: 50px;
+    font-weight: bolder;
 }

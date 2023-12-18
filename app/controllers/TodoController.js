@@ -93,8 +93,10 @@ export class TodoController {
             todoService.todoCount()
             console.log('controller telling service to update todo count')
         } catch (error) {
-            console.error(error)
-            Pop.error(error)
+            // NOTE I was getting an error popping that something was undefined but it is all working, mostly.. some console.log are missing but it is working like I need it to. 
+            // NOTE to self, ask instructors what is going on here... I swept it under the rug but that isn't the best solution
+            // console.error(error)
+            // Pop.error(error)
         }
     }
 

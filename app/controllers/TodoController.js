@@ -42,7 +42,7 @@ export class TodoController {
         AppState.on('user', _drawTodosForm)
         AppState.on('user', _drawTodosList)
         AppState.on('todos', _drawTodosList)
-        AppState.on('todos', this.todoCount)
+        // AppState.on('todos', this.todoCount)
         AppState.on('todos', _drawTodoCount)
     }
 

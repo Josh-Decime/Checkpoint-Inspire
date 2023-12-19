@@ -15,7 +15,7 @@ class WeatherService {
         const newWeather = new Weather(response.data)
         // @ts-ignore
         AppState.weather = newWeather
-        console.log('✨⛈️', AppState.weather)
+        console.log('✨⛈️ Weather mapped to the AppState:', AppState.weather)
     }
 
 }

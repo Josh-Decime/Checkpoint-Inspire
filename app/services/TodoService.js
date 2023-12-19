@@ -28,6 +28,7 @@ class TodoService {
         console.log('🐬☑️ toggling Todo completed', foundTodo)
         const response = await api.put(`api/todos/${todoId}`, foundTodo)
         console.log('🐬☑️📡 updating api with toggle completed', response.data)
+        AppState.emit('todos')
     }
 
     async removeTodo(todoId) {
@@ -37,13 +38,13 @@ class TodoService {
         AppState.todos.splice(indexToRemove, 1)
     }
 
-    todoCount() {
-        let count = 0
-        count = AppState.todos.length
-        console.log('todo count in the service', count)
-        AppState.todoCount = count
-        console.log('count in the AppState', AppState.todoCount)
-    }
+    // todoCount() {
+    //     let count = 0
+    //     count = AppState.todos.length
+    //     console.log('todo count in the service', count)
+    //     AppState.todoCount = count
+    //     console.log('count in the AppState', AppState.todoCount)
+    // }
 
 
 

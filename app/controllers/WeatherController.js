@@ -9,6 +9,7 @@ import { setHTML } from "../utils/Writer.js";
 export class WeatherController {
     constructor() {
         console.log('⛈️ weather controller is live')
+        this.getWeather()
     }
 
     async getWeather() {

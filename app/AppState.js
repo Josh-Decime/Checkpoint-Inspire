@@ -1,6 +1,7 @@
 import { Background } from './models/Background.js'
 import { Quote } from './models/Quote.js'
 import { Todo } from './models/Todo.js'
+import { Weather } from './models/Weather.js'
 import { EventEmitter } from './utils/EventEmitter.js'
 import { createObservableProxy } from './utils/ObservableProxy.js'
 
@@ -18,18 +19,18 @@ class ObservableAppState extends EventEmitter {
     new Todo(
       {
         completed: false,
-        description: "Get the todo drawing to the page"
+        description: "Your Todo is Loading"
       }
     ),
     new Todo(
       {
         completed: false,
-        description: "be able to check this box to complete it!"
+        description: "They will be displayed shortly"
       }
     ),
   ]
 
-  todoCount = 0
+  // todoCount = 0
 
   /**
    * @type {Background[]}
@@ -42,6 +43,14 @@ class ObservableAppState extends EventEmitter {
   quote = new Quote({
     "content": "Quote will be displayed shortly",
     "author": "Site Creator"
+  })
+
+  /**
+   * @type {Weather}
+   */
+  weather = new Weather({
+
+
   })
 
 

@@ -28,8 +28,9 @@ function _drawTodoCount() {
 
     // FIXME filter your todo array here to only include todos that are not complete
     // FIXME inject your filtered array's length into your HTML
-    countElm.innerHTML = AppState.todos.length.toString()
-    console.log('count value inside draw function', this.todoCount.count)
+    const incompleteTodos = AppState.todos.filter(todo => !todo.completed)
+    countElm.innerHTML = incompleteTodos.length.toString()
+    // console.log('count value inside draw function', this.todoCount.count)
     // setHTML('todo-count', this.todoCount.count.toString())
 }
 
@@ -42,7 +43,7 @@ export class TodoController {
         AppState.on('user', _drawTodosList)
         AppState.on('todos', _drawTodosList)
         AppState.on('todos', this.todoCount)
-        AppState.on('todoCount', _drawTodoCount)
+        AppState.on('todos', _drawTodoCount)
     }
 
 
@@ -90,18 +91,18 @@ export class TodoController {
     }
 
 
-    todoCount() {
-        try {
+    // todoCount() {
+    //     try {
 
-            todoService.todoCount()
-            console.log('controller telling service to update todo count')
-        } catch (error) {
-            // NOTE I was getting an error popping that something was undefined but it is all working, mostly.. some console.log are missing but it is working like I need it to. 
-            // NOTE to self, ask instructors what is going on here... I swept it under the rug but that isn't the best solution
-            // console.error(error)
-            // Pop.error(error)
-        }
-    }
+    //         todoService.todoCount()
+    //         console.log('controller telling service to update todo count')
+    //     } catch (error) {
+    //         // NOTE I was getting an error popping that something was undefined but it is all working, mostly.. some console.log are missing but it is working like I need it to. 
+    //         // NOTE to self, ask instructors what is going on here... I swept it under the rug but that isn't the best solution
+    //         // console.error(error)
+    //         // Pop.error(error)
+    //     }
+    // }
 
 
 
